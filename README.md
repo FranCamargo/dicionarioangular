@@ -2,8 +2,6 @@
 
 Um glossário interativo com os principais termos, conceitos e depreciações do Angular, organizado por versão (v14 a v22), em uma lista geral pesquisável e em uma lista de itens descontinuados — com busca, filtros e paginação.
 
-> 🔗 **Demo:** _(adicionar link do deploy aqui)_
-
 ## Sobre o projeto
 
 Projeto de estudo criado para consolidar conhecimento sobre as features mais recentes do Angular — Signals, novo control flow, deferrable views, zoneless, entre outras — enquanto elas eram documentadas em forma de dicionário.
