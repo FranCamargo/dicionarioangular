@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "projetosemia": {
+    "dicionario-angular-moderno": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -61,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "projetosemia:build:production"
+              "buildTarget": "dicionario-angular-moderno:build:production"
             },
             "development": {
-              "buildTarget": "projetosemia:build:development"
+              "buildTarget": "dicionario-angular-moderno:build:development"
             }
           },
           "defaultConfiguration": "development"

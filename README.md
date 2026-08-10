@@ -1,59 +1,50 @@
-# Projetosemia
+# Dicionário Angular Moderno
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.6.
+Um glossário interativo com os principais termos, conceitos e depreciações do Angular, organizado por versão (v14 a v22), em uma lista geral pesquisável e em uma lista de itens descontinuados — com busca, filtros e paginação.
 
-## Development server
+> 🔗 **Demo:** _(adicionar link do deploy aqui)_
 
-To start a local development server, run:
+## Sobre o projeto
+
+Projeto de estudo criado para consolidar conhecimento sobre as features mais recentes do Angular — Signals, novo control flow, deferrable views, zoneless, entre outras — enquanto elas eram documentadas em forma de dicionário.
+
+As informações foram organizadas em três visões (abas):
+
+- **Mudanças por versão**: o que foi introduzido em cada release do Angular, de v14 a v22.
+- **Todos os termos**: um glossário geral (fundamentos, ciclo de vida, DI, Signals, formulários, roteamento, HTTP, testes, CLI, SSR, entre outras categorias), com busca por texto, filtro por categoria, ordenação alfabética e paginação.
+- **Descontinuados**: APIs, pacotes e ferramentas que saíram de uso ou tiveram uso desencorajado desde a v14 (ex.: `ComponentFactoryResolver`, `HttpClientModule`, `*ngIf`/`*ngFor`/`*ngSwitch`, `@angular/animations`, Protractor), cada um com a versão de depreciação e a alternativa recomendada — também com busca e paginação. Os dados foram levantados a partir do guia oficial de depreciações e do `CHANGELOG.md` do repositório `angular/angular`.
+
+## Stack
+
+- [Angular 21](https://angular.dev) — standalone components, Signals (`signal`, `computed`, `model`) e novo control flow (`@if`, `@for`, `@switch`)
+- TypeScript
+- SCSS (design próprio, sem bibliotecas de UI)
+- Tipografia [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) + [Inter](https://fonts.google.com/specimen/Inter) via Google Fonts
+
+## Estrutura
+
+Além do componente principal (`app`), a busca e a paginação foram extraídas em componentes standalone reutilizáveis, usados tanto na aba "Todos os termos" quanto em "Descontinuados":
+
+- `src/app/busca` — campo de busca com two-way binding via `model()`.
+- `src/app/paginacao` — navegação de páginas (anterior/próxima, números com reticências), recebendo página atual e total via `input()` e emitindo a página escolhida via `output()`.
+
+## Rodando localmente
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Depois é só acessar `http://localhost:4200/`. A aplicação recarrega automaticamente a cada alteração nos arquivos.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Build de produção
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Os artefatos ficam disponíveis na pasta `dist/`.
 
-## Running unit tests
+## Aviso
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este é um projeto pessoal de estudo, não é um material oficial do Angular. As informações apresentadas devem ser sempre conferidas na [documentação oficial](https://angular.dev).

@@ -1,0 +1,38 @@
+@if (totalPaginas() > 1) {
+  <nav class="paginacao" aria-label="Paginação">
+    <button
+      type="button"
+      class="paginacao__botao"
+      [disabled]="paginaAtual() === 1"
+      (click)="anterior()"
+      aria-label="Página anterior"
+    >
+      ‹
+    </button>
+
+    @for (p of numeros(); track $index) {
+      @if (p === '...') {
+        <span class="paginacao__reticencias">…</span>
+      } @else {
+        <button
+          type="button"
+          class="paginacao__botao"
+          [class.paginacao__botao--ativo]="p === paginaAtual()"
+          (click)="irParaPagina(p)"
+        >
+          {{ p }}
+        </button>
+      }
+    }
+
+    <button
+      type="button"
+      class="paginacao__botao"
+      [disabled]="paginaAtual() === totalPaginas()"
+      (click)="proxima()"
+      aria-label="Próxima página"
+    >
+      ›
+    </button>
+  </nav>
+}

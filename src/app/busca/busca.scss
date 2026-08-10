@@ -1,0 +1,58 @@
+.busca {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.3s var(--ease-fluid), background 0.3s var(--ease-fluid);
+
+  &:focus-within {
+    border-color: var(--accent-violet);
+    background: var(--surface-strong);
+  }
+
+  &__icone {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--text-muted);
+  }
+
+  &__input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+
+    &::placeholder {
+      color: var(--text-muted);
+    }
+  }
+
+  &__limpar {
+    border: none;
+    background: var(--surface-strong);
+    color: var(--text-secondary);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s var(--ease-fluid), background 0.2s var(--ease-fluid);
+
+    &:hover {
+      color: #fff;
+      background: var(--accent-red);
+    }
+  }
+}
